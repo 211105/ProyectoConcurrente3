@@ -1,4 +1,4 @@
-module RestauranteMarriot {
+module Restaurante {
     requires javafx.fxml;
     requires javafx.controls;
 

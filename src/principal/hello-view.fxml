@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -11,22 +12,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1096.0" style="-fx-background-position: ;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Controller">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1096.0" style="-fx-background-position: 1" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.HelloController">
    <children>
-      <Button fx:id="btnIniciar" layoutX="52.0" layoutY="697.0" mnemonicParsing="false" onAction="#IniciarAnimacion" style="-fx-background-color: yellowgreen; -fx-background-radius: 30;" text="Iniciar" textFill="WHITE" />
-      <Button fx:id="BtnSalir" layoutX="126.0" layoutY="697.0" mnemonicParsing="false" onAction="#Finalizar" style="-fx-background-color: red; -fx-background-radius: 30;" text="Terminar" textFill="WHITE" />
+      <Button fx:id="btnIniciar" layoutX="848.0" layoutY="697.0" mnemonicParsing="false" onAction="#IniciarAnimacion" prefHeight="30.0" prefWidth="66.0" style="-fx-background-radius: 30;" text="Iniciar" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="BtnSalir" layoutX="969.0" layoutY="697.0" mnemonicParsing="false" onAction="#Finalizar" prefHeight="25.0" prefWidth="66.0" style="-fx-background-radius: 30;" text="Salir">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <Rectangle fx:id="table3" arcHeight="5.0" arcWidth="5.0" fill="#b2b2b2" height="53.0" layoutX="413.0" layoutY="87.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="table4" arcHeight="5.0" arcWidth="5.0" fill="#b2b2b2" height="53.0" layoutX="519.0" layoutY="87.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="table1" arcHeight="5.0" arcWidth="5.0" fill="#b2b2b2" height="50.0" layoutX="210.0" layoutY="88.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="table5" arcHeight="5.0" arcWidth="5.0" fill="#b2b2b2" height="53.0" layoutX="619.0" layoutY="87.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
       <Rectangle fx:id="table2" arcHeight="5.0" arcWidth="5.0" fill="#b2b2b2" height="50.0" layoutX="312.0" layoutY="88.0" stroke="#ffffff00" strokeType="INSIDE" width="48.0" />
-      <Circle fx:id="chef" fill="#b2b2b2" layoutX="523.0" layoutY="340.0" radius="15.0" stroke="#ffffff00" strokeType="INSIDE" />
       <Text fill="WHITE" layoutX="125.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes">
          <font>
             <Font name="Dosis ExtraLight" size="19.0" />
          </font>
       </Text>
-      <Circle fx:id="mesero" fill="#b0b0b0" layoutX="523.0" layoutY="339.0" radius="15.0" stroke="#ae747400" strokeType="INSIDE" />
+      <Circle fx:id="mesero" fill="#b0b0b0" layoutX="569.0" layoutY="339.0" radius="15.0" stroke="#ae747400" strokeType="INSIDE" />
       <Label fx:id="lblMesero" layoutX="508.0" layoutY="191.0" prefHeight="18.0" prefWidth="143.0">
          <font>
             <Font size="18.0" />
@@ -63,122 +72,122 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="109.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="mesa11" fitHeight="50.0" fitWidth="48.0" layoutX="312.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa111" fitHeight="50.0" fitWidth="48.0" layoutX="211.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112" fitHeight="50.0" fitWidth="48.0" layoutX="414.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121" fitHeight="50.0" fitWidth="48.0" layoutX="520.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211" fitHeight="50.0" fitWidth="48.0" layoutX="620.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111" fitHeight="50.0" fitWidth="48.0" layoutX="726.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111" fitHeight="50.0" fitWidth="48.0" layoutX="813.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211111" fitHeight="50.0" fitWidth="48.0" layoutX="905.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111111" fitHeight="50.0" fitWidth="48.0" layoutX="905.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111111" fitHeight="50.0" fitWidth="48.0" layoutX="905.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211111111" fitHeight="50.0" fitWidth="48.0" layoutX="813.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111111111" fitHeight="50.0" fitWidth="48.0" layoutX="716.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111111111" fitHeight="50.0" fitWidth="48.0" layoutX="620.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211111111111" fitHeight="50.0" fitWidth="48.0" layoutX="520.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="421.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="312.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="211.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="142.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="142.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa11211111111111111111" fitHeight="50.0" fitWidth="48.0" layoutX="142.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="264.0" fitWidth="271.0" layoutX="220.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images.png" />
+            <Image url="@../resources/images.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="121.0" fitWidth="143.0" layoutX="420.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@cocinero-y-chef-imagen-animada-0036.gif" />
+            <Image url="@../resources/cocinero-y-chef-imagen-animada-0036.gif" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa112111111111111111111" fitHeight="110.0" fitWidth="90.0" layoutX="750.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@descarga.png" />
+            <Image url="@../resources/descarga.png" />
          </image>
       </ImageView>
       <ImageView fx:id="mesa1121111111111111111111" fitHeight="100.0" fitWidth="143.0" layoutX="651.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Screenshot_1.png" />
+            <Image url="@../resources/Screenshot_1.png" />
          </image>
       </ImageView>
       <Text layoutX="125.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordenar" />

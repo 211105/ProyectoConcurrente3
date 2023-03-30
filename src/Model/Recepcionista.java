@@ -6,10 +6,11 @@ public class Recepcionista implements Runnable{
         this.monitor = monitor;
     }
     @Override
+    //Duerme a al resepcionista
     public void run() {
         while (true){
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

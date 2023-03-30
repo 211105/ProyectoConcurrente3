@@ -14,7 +14,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 
-public class Controller implements Observer {
+public class HelloController implements Observer {
 
     @FXML
     private AnchorPane anchor;
@@ -26,12 +26,8 @@ public class Controller implements Observer {
     private Label lblMesero;
 
     @FXML
-    private Circle chef;
-
-    @FXML
     private Circle mesero;
 
-    private String[] positions;
 
     @FXML
     void Finalizar(ActionEvent event) {
@@ -47,20 +43,19 @@ public class Controller implements Observer {
         monitor.addObserver(this::update);
 
         Mesero mesero=new Mesero(anchor, monitor);
-        Recepcionista recepcionista=new Recepcionista(monitor);
-
-        Cocinero cocinero = new Cocinero(monitor);
-        HilosCreados hilosCreados = new HilosCreados(anchor, monitor, this);
-
         Thread hiloMesero = new Thread(mesero);
         hiloMesero.start();
 
+
+        Recepcionista recepcionista=new Recepcionista(monitor);
         Thread hiloRecepcionista = new Thread(recepcionista);
         hiloRecepcionista.start();
 
+        Cocinero cocinero = new Cocinero(monitor);
         Thread hCocinero = new Thread(cocinero);
         hCocinero.start();
 
+        HilosCreados hilosCreados = new HilosCreados(anchor, monitor, this);
         Thread hCreadorClientes = new Thread(hilosCreados);
         hCreadorClientes.start();
 

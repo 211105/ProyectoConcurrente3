@@ -6,7 +6,7 @@ public class Cocinero implements Runnable{
         this.monitor = monitor;
     }
     @Override
-    public void run() {
+    public void run() {//preparar comida de manera continua
         while(true){
             monitor.cocinar();
         }

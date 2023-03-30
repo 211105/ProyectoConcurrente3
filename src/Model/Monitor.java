@@ -4,7 +4,7 @@ import java.util.Observable;
 
 public class Monitor extends Observable {
 
-    public boolean reservacionLibre;
+    public boolean reservacionLibre = true;
     public boolean client;
     public boolean accEntrar;
     public int numClientes;
@@ -18,44 +18,6 @@ public class Monitor extends Observable {
     public boolean[] mesas;
     public int auxMesa;
 
-    public Monitor(){
-        reservacionLibre = true;
-        client=false;
-        accEntrar=false;
-        numClientes=0;
-        reservado ="";
-        orden=0;
-        comida=0;
-        peticiones=0;
-        auxMesa = -1;
-        confirmacion=false;
-        maxNumClientes = 0;
-        mesas = new boolean[20];
-
-        for (int i=0; i<19; i++) {
-            mesas[i] = false;
-        }
-    }
-
-    public synchronized boolean reservar(String nombre){
-        //Para el hilo cliente
-        //Solo un hilo a la vez puede puede reservar una mesa
-        synchronized (this) {
-            if(reservacionLibre){
-                reservacionLibre =false;
-                reservado = nombre;
-                try {
-                    Thread.sleep(1500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-    }
 
     public int entrar(String nombre){
         // comprueba y verifica la entrada de los clientes
@@ -63,18 +25,18 @@ public class Monitor extends Observable {
         try {
             if(reservado.equals(nombre)){
                 confirmacion = false;
-                numMesa = 19;
-                auxMesa = 19;
+                numMesa = 20;
+                auxMesa = 20;
             }else{
                 synchronized (this) {
                     numClientes++;
                     maxNumClientes++;
-                    while (maxNumClientes==19) {
+                    while (maxNumClientes==20) {
                         wait();
                     }
                     accEntrar=true;
                     client=true;
-                    for (int i=0; i<19; i++) {
+                    for (int i=0; i<20; i++) {
                         if(!mesas[i]) {
                             numMesa = i;
                             auxMesa = i;
@@ -99,13 +61,13 @@ public class Monitor extends Observable {
         }
     }
 
-    public void servirOrden(){
+    public void servirOrden(){// ordenar de manera sincronizada
         //El mesero atiende una mesa
         String txt = "libreMesero";
         boolean aux = false;
         synchronized (this) {
             if (orden<=0){
-                txt = "libreMesero";
+                txt = "libre";
                 try {
                     wait();
                 } catch (InterruptedException e) {
@@ -113,7 +75,7 @@ public class Monitor extends Observable {
                 }
             }else{
                 aux = true;
-                txt = "ocupadoMesero";
+                txt = "ocupado";
                 peticiones++;
                 orden--;
             }
@@ -129,7 +91,10 @@ public class Monitor extends Observable {
             }
         }
     }
-    public void cocinar(){
+
+
+
+    public void cocinar(){//notifica al  mesero  que la comida ya esta disponibles
         //Se cocina solo una vez, y esto va conforme a al pedido
         String txt = "libre";
         synchronized (this) {
@@ -150,7 +115,7 @@ public class Monitor extends Observable {
             notifyObservers(txt);
         }
     }
-    public void comer(){
+    public void comer(){// comen la comida de manera sincronizada
         synchronized (this) {
             while (comida<=0){
                 try {
@@ -167,7 +132,7 @@ public class Monitor extends Observable {
             e.printStackTrace();
         }
     }
-    public void salir(int numMesaLibre){
+    public void salir(int numMesaLibre){// selibera la mesa y notifica al siguiente cliente
         //Solo puede salir un cliente a la vez
         synchronized (this) {
             if(!confirmacion){
@@ -177,7 +142,6 @@ public class Monitor extends Observable {
                 numClientes--;
                 maxNumClientes--;
                 client=false;
-                System.out.println(numClientes+" Clientes en fila");
             }
             mesas[numMesaLibre] = false;
             notifyAll();
@@ -198,6 +162,25 @@ public class Monitor extends Observable {
             }
             accEntrar=false;
             notifyAll();
+        }
+    }
+
+
+    public Monitor(){
+        client=false;
+        accEntrar=false;
+        numClientes=0;
+        reservado ="";
+        orden=0;
+        comida=0;
+        peticiones=0;
+        auxMesa = -1;
+        confirmacion=false;
+        maxNumClientes = 0;
+        mesas = new boolean[20];
+
+        for (int i=0; i<20; i++) {
+            mesas[i] = false;
         }
     }
 
