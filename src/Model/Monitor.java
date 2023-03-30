@@ -73,6 +73,7 @@ public class Monitor extends Observable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
             }else{
                 aux = true;
                 txt = "ocupado";
